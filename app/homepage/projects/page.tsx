@@ -42,25 +42,34 @@ const projects = [
 
 export default function Page() {
   return (
-    <div className="container mx-auto flex flex-row items-start justify-start gap-10 text-orange-950 text-xl mt-10">
-      {projects.map((project) => (
-        <div key = {project.id} className="flex flex-col items-center w-60">
-          <Link href={project.link} target="_blank">
-            <Image
-              src={project.image}
-              alt={project.name}
-              width={200}
-              height={180}
-              className="opacity-100 transition-opacity hover:opacity-50"
-            />
-          </Link>
-          <p className="mt-2 text-center text-lg">{project.description}</p>
-          {project.language &&
-          (<p className="mt-2 text-center text-lg">
-            Language: {project.language}</p>
-            )}
-        </div>
-      ))}
+    <div className="container mx-auto p-4 md:p-8">
+      <h1 className="animate-fade-in-up mb-8 text-center text-3xl font-bold tracking-tight sm:text-4xl">
+        My Projects
+      </h1>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className="animate-fade-in-up flex flex-col overflow-hidden rounded-lg border border-white/10 bg-white/5 p-4"
+            style={{ animationDelay: `${index * 0.1}s`, animationFillMode: 'backwards' }}
+          >
+            <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group">
+              <div className="overflow-hidden rounded-md">
+                <Image
+                  src={project.image}
+                  alt={project.name}
+                  width={400}
+                  height={250}
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <h2 className="mt-4 text-xl font-semibold text-[color:var(--foreground)]">{project.name}</h2>
+            </Link>
+            <p className="mt-2 flex-grow text-[color:var(--muted-foreground)]">{project.description}</p>
+            <p className="mt-4 text-sm font-medium text-[color:var(--primary)]">Language: {project.language}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

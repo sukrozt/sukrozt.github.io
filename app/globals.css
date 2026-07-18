@@ -2,22 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-geist-sans: 'YourCustomFont', sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --font-geist-sans: 'YourCustomFont', sans-serif;
+    /* Modern Koyu Tema Renk Paleti */
+    --background: hsl(222.2 84% 4.9%); /* Koyu Mavi */
+    --foreground: hsl(210 40% 98%); /* Neredeyse Beyaz */
+    --muted-foreground: hsl(215.4 16.3% 56.9%); /* Gri tonu */
+    --primary: hsl(263.4 70% 50.4%); /* Vurgu için Mor */
+  }
 
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  /* Tüm elemanlara yumuşak geçiş efekti */
+  * {
+    transition-property: color, background-color, border-color,
+      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
+      filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
 }
-img:hover {
-  opacity: 0.5;
-  transition: opacity 0.3s;
-}
 
-body {
-  background-color: #f0f0f0;  /* This won't affect Tailwind classes like bg-pink-500 */
-
+@layer utilities {
+  /* Metinler için animasyon */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
 }

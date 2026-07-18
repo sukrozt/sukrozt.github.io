@@ -1,5 +1,5 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
-import './globals.css'; // This is important for Tailwind to work!
+import 'app/globals.css'; // This is important for Tailwind to work!
 import React from 'react';
 import SocialLinks from '@/components/SocialLinks'; // Import the component
 
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-rose-200 text-red min-h-screen"> {/* Move bg-rose-300 here */}
+      <body className="min-h-screen"> {/* Global stillerin uygulanması için eski renk sınıfları kaldırıldı */}
         <div className="flex">
           <SideNav />
           <main className="flex-1">
