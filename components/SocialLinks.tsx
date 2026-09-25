@@ -34,6 +34,7 @@ export default function Contact() {
         <Link 
           href={contact.link} 
           target="_blank"
+          rel="noopener noreferrer"
           className="opacity-35 hover:opacity-100 grayscale hover:grayscale-0 hover:scale-110 hover:drop-shadow-lg transition-all duration-300 inline-block"
         >
           <Image

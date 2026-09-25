@@ -8,9 +8,9 @@ import {
 
 const navLinks = [
   { name: 'Home', href: '/', icon: HomeIcon },
-  { name: 'About', href: '/homepage/about', icon: UserCircleIcon }, // About sayfası aktif
-  // { name: 'Projects', href: '/homepage/projects', icon: CodeBracketSquareIcon }, // Projects sayfası şimdilik gizli
-  // { name: 'Contact', href: '/homepage/contact', icon: EnvelopeIcon }, // Contact sayfası şimdilik gizli
+  { name: 'About', href: '/about', icon: UserCircleIcon },
+  { name: 'Projects', href: '/projects', icon: CodeBracketSquareIcon },
+  // { name: 'Contact', href: '/contact', icon: EnvelopeIcon },
 ];
 
 export default function SideNav() {

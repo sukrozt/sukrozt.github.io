@@ -1,5 +1,5 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
-import 'app/globals.css'; // This is important for Tailwind to work!
+import 'app/globals.css';
 import React from 'react';
 import SocialLinks from '@/components/SocialLinks'; // Import the component
 

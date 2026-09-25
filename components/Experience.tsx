@@ -1,29 +1,13 @@
 import { Button } from '@/app/ui/button';
 
-export default function AboutDetails() {
+export default function Experience() {
   return (
     <div className="animate-fade-in-up space-y-12">
       {/* Intro Section */}
       <section className="flex flex-col items-center">
         <h1 className="mb-6 text-center text-4xl font-extrabold tracking-tight sm:text-5xl text-transparent bg-clip-text bg-gradient-to-b from-neutral-900 to-neutral-600">
-          About Me
+          Experiences
         </h1>
-        <p
-          className="text-center text-lg sm:text-xl text-neutral-600 max-w-3xl leading-relaxed"
-          style={{ animationDelay: '0.1s', animationFillMode: 'backwards' }}
-        >
-          I am Şükriye Öztürk, a Computer Engineering student at Hacettepe
-          University with a passion for software development, network systems,
-          and cybersecurity. I thrive on learning new technologies and
-          contributing to innovative projects.
-        </p>
-      </section>
-
-      {/* CV Download Button */}
-      <section className="flex justify-center animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'backwards' }}>
-        <a href="/CV.pdf" download="SukriyeOzturk_CV.pdf">
-          <Button>Download CV</Button>
-        </a>
       </section>
 
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-200 to-transparent my-8"></div>
@@ -33,7 +17,6 @@ export default function AboutDetails() {
         className="animate-fade-in-up"
         style={{ animationDelay: '0.3s', animationFillMode: 'backwards' }}
       >
-        <h2 className="mb-8 text-3xl font-bold tracking-tight text-neutral-900">Experience</h2>
         <div className="space-y-6">
           <div className="group relative rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-neutral-300">
             <h3 className="font-bold text-lg text-neutral-900">Part-Time IP Engineer, Nokia</h3>
