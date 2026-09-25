@@ -6,7 +6,7 @@ const contacts = [
     id: 1,
     name: "LinkedIn",
     image: "/linkedin.png",
-    link: "https://www.linkedin.com/in/%C5%9F%C3%BCkriye-%C3%B6zt%C3%BCrk-8a0394225/",
+    link: "https://www.linkedin.com/in/sukriyeozturk/",
     alt: "LinkedIn Account",
   },
   {
@@ -28,17 +28,20 @@ const contacts = [
 
 export default function Contact() {
   return (
-    <div className="flex flex-col items-end justify-start gap-6 text-orange-950 text-xl mt-10 sm:flex-row sm:flex-wrap sm:justify-center">
+    <div className="flex flex-col items-end justify-start gap-5 pt-8 pr-6 md:pr-12">
       {contacts.map((contact) => (
-      <div key={contact.id} className="flex flex-col items-center w-60">
-        <Link href={contact.link} target="_blank">
-        <Image
-          src={contact.image}
-          alt={contact.name}
-          width={50}
-          height={50}
-          className="opacity-100 transition-opacity hover:opacity-50"
-        />  
+      <div key={contact.id} className="flex flex-col items-center">
+        <Link 
+          href={contact.link} 
+          target="_blank"
+          className="opacity-35 hover:opacity-100 grayscale hover:grayscale-0 hover:scale-110 hover:drop-shadow-lg transition-all duration-300 inline-block"
+        >
+          <Image
+            src={contact.image}
+            alt={contact.name}  
+            width={36}
+            height={36}
+          />  
         </Link>
       </div>
       ))}

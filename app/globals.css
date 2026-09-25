@@ -4,41 +4,39 @@
 
 @layer base {
   :root {
-    /* Modern Koyu Tema Renk Paleti */
-    --background: hsl(222.2 84% 4.9%); /* Koyu Mavi */
-    --foreground: hsl(210 40% 98%); /* Neredeyse Beyaz */
-    --muted-foreground: hsl(215.4 16.3% 56.9%); /* Gri tonu */
-    --primary: hsl(263.4 70% 50.4%); /* Vurgu için Mor */
+    --background: #fafafa;
+    --foreground: #171717;
+    --muted-foreground: #525252;
+    --primary: #3b82f6; /* Blue */
+    --border: #e5e5e5;
   }
 
   body {
     background-color: var(--background);
     color: var(--foreground);
+    /* Modern, clean, and bold sans-serif font */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
-  /* Tüm elemanlara yumuşak geçiş efekti */
   * {
-    transition-property: color, background-color, border-color,
-      text-decoration-color, fill, stroke, opacity, box-shadow, transform,
-      filter, backdrop-filter;
+    transition-property: color, background-color, border-color, opacity, transform, filter;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+    transition-duration: 300ms;
   }
 }
 
 @layer utilities {
-  /* Metinler için animasyon */
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
   @keyframes fade-in-up {
     from {
       opacity: 0;
-      transform: translateY(10px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-  .animate-fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
   }
 }
