@@ -216,3 +216,13 @@ export async function fetchFilteredCustomers(query: string) {
     throw new Error('Failed to fetch customer table.');
   }
 }
+
+export async function fetchProjects() {
+  try {
+    const data = await sql`SELECT * FROM projects ORDER BY date DESC`;
+    return data;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch projects.');
+  }
+}

@@ -1,42 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Project() {
-  const projects = [
-    {
-      id: 1,
-      name: "Smart Home System",
-      image: "/projects/smart home.png",
-      link: "https://github.com/sukrozt/bbm104/tree/main/assignments/as2",
-      description: "A Smart Home System which has adjustable components and with an energy consume calculator. Used all OOP elements.",
-      language: "Java",
-    },
-    {
-      id: 2,
-      name: "Evde Ne Var",
-      image: "/projects/smart home.png",
-      link: "https://github.com/sukrozt/evdenevar",
-      description: "A web application that allows users to manage their home inventory. Users can add, edit, and delete items, as well as categorize them for easy organization.",
-      language: "Python, Dart",
-    },
-    {
-      id: 3,
-      name: "Pizza Delivery System",
-      image: "/projects/pizza.png",
-      link: "https://github.com/sukrozt/Global-AI-Hub-Bootcamp",
-      description: "A mini pizza delivery system that has ingredients of a pizza. There is an UI for the purchases.",
-      language: "Python",
-    },
-    {
-      id: 4,
-      name: "Flappy Game",
-      image: "/projects/bird.png",
-      link: "https://github.com/sukrozt/flappy",
-      description: "A mini 2D Unity game which is the endless fly of characters in a map with columns.",
-      language: "C#, Unity",
-    },
-  ];
+// DB'den gelen veri tipi
+type ProjectType = {
+  id: string;
+  title: string;
+  description: string;
+  tech: string;
+  image_url: string;
+  link: string;
+};
 
+export default function Project({ projects }: { projects: ProjectType[] }) {
   return (
     <div className="animate-fade-in-up space-y-12">
       {/* Başlık ve Açıklama */}
@@ -60,8 +35,8 @@ export default function Project() {
           >
             <Link href={project.link} target="_blank" rel="noopener noreferrer" className="block overflow-hidden rounded-lg mb-4">
               <Image
-                src={project.image}
-                alt={project.name}
+                src={project.image_url}
+                alt={project.title}
                 width={500}
                 height={300}
                 className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
@@ -70,7 +45,7 @@ export default function Project() {
             
             <Link href={project.link} target="_blank" rel="noopener noreferrer">
               <h3 className="font-bold text-xl text-neutral-900 mb-3 group-hover:text-blue-600 transition-colors">
-                {project.name}
+                {project.title}
               </h3>
             </Link>
             
@@ -80,7 +55,7 @@ export default function Project() {
             
             <div className="mt-auto">
               <span className="text-xs font-semibold px-3 py-1 bg-neutral-100 text-neutral-700 rounded-full border border-neutral-200">
-                {project.language}
+                {project.tech}
               </span>
             </div>
           </div>
